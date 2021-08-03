@@ -15,10 +15,7 @@ export default class WriteStoryScreen extends React.Component {
     }
   }
   submitStory=async()=>{    
-    db.collection("stories").add({
-      story: this.state.story,
-      title:this.state.title,
-      author:this.state.author
+    db.collection("stories").add({this.setState({ title: '', author: '', story: '' })
     })
   }
     render() {
@@ -39,6 +36,7 @@ export default class WriteStoryScreen extends React.Component {
                 author: text
               });
             }}
+            value={this.state.title} style={styles.title}
             ></TextInput>
 
             <TextInput             
@@ -48,6 +46,7 @@ export default class WriteStoryScreen extends React.Component {
                 title: text
               });
             }}
+            value={this.state.title} style={styles.title}
             ></TextInput>
 
             <TextInput             
@@ -58,6 +57,7 @@ export default class WriteStoryScreen extends React.Component {
                 story: text
               });
             }}
+            value={this.state.title} style={styles.title}
             ></TextInput>
 
             </View>
